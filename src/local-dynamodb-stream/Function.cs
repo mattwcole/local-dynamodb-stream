@@ -17,6 +17,7 @@ namespace local_dynamodb_stream
     {
         private static readonly JsonSerializer _jsonSerializer = new JsonSerializer();
 
+        // local-dynamodb-stream::local_dynamodb_stream.Function::FunctionHandler
         public void FunctionHandler(DynamoDBEvent dynamoEvent, ILambdaContext context)
         {
             context.Logger.LogLine($"Beginning to process {dynamoEvent.Records.Count} records...");
@@ -32,6 +33,12 @@ namespace local_dynamodb_stream
             }
 
             context.Logger.LogLine("Stream processing complete.");
+        }
+
+        // local-dynamodb-stream::local_dynamodb_stream.Function::Handler
+        public void Handler()
+        {
+            System.Console.WriteLine("HELLO FROM LAMBDA");
         }
 
         private string SerializeStreamRecord(StreamRecord streamRecord)
