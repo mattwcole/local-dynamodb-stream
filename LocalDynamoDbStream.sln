@@ -1,0 +1,46 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.438
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{B497A76F-896C-45D5-A907-9A0A6E57A17E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{CF9C51B4-603F-4384-9FC5-46146C00A348}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LocalDynamoDbStream", "src\LocalDynamoDbStream\LocalDynamoDbStream.csproj", "{434ABB66-6BF5-4D16-8A3E-A7B591C19F2A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LocalDynamoDbStream.Tests", "test\LocalDynamoDbStream.Tests\LocalDynamoDbStream.Tests.csproj", "{7AC30033-A50E-441E-8B86-E54E1F915346}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{B7BB5726-C4EA-4883-8460-8A292628F75F}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+		docker-compose.yml = docker-compose.yml
+		README.md = README.md
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{434ABB66-6BF5-4D16-8A3E-A7B591C19F2A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{434ABB66-6BF5-4D16-8A3E-A7B591C19F2A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{434ABB66-6BF5-4D16-8A3E-A7B591C19F2A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{434ABB66-6BF5-4D16-8A3E-A7B591C19F2A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7AC30033-A50E-441E-8B86-E54E1F915346}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7AC30033-A50E-441E-8B86-E54E1F915346}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7AC30033-A50E-441E-8B86-E54E1F915346}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7AC30033-A50E-441E-8B86-E54E1F915346}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{434ABB66-6BF5-4D16-8A3E-A7B591C19F2A} = {B497A76F-896C-45D5-A907-9A0A6E57A17E}
+		{7AC30033-A50E-441E-8B86-E54E1F915346} = {CF9C51B4-603F-4384-9FC5-46146C00A348}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {39DCF32F-BE7A-462D-A47C-DA89C4720F9E}
+	EndGlobalSection
+EndGlobal

@@ -5,15 +5,15 @@
 ```sh
 docker-compose up
 
-dotnet publish src/local-dynamodb-stream
+dotnet publish src/LocalDynamoDbStream
 
-zip -rj function.zip src/local-dynamodb-stream/bin/Debug/netcoreapp2.1/publish
+zip -rj function.zip src/LocalDynamoDbStream/bin/Debug/netcoreapp2.1/publish
 
 awslocal lambda create-function \
     --function-name local-function \
     --runtime dotnetcore2.1 \
     --zip-file fileb://function.zip \
-    --handler local-dynamodb-stream::local_dynamodb_stream.Function::Handler \
+    --handler local-dynamodb-stream::LocalDynamoDbStream.Function::Handler \
     --role local-role
 
 awslocal lambda invoke --function-name local-function local-function.log
@@ -24,15 +24,15 @@ awslocal lambda invoke --function-name local-function local-function.log
 ```sh
 docker-compose up
 
-dotnet publish src/local-dynamodb-stream
+dotnet publish src/LocalDynamoDbStream
 
-7z a -tzip function.zip ./src/local-dynamodb-stream/bin/Debug/netcoreapp2.1/publish/*
+7z a -tzip function.zip ./src/LocalDynamoDbStream/bin/Debug/netcoreapp2.1/publish/*
 
 aws --endpoint-url=http://localhost:4574 lambda create-function \
     --function-name local-function \
     --runtime dotnetcore2.1 \
     --zip-file fileb://function.zip \
-    --handler local-dynamodb-stream::local_dynamodb_stream.Function::Handler \
+    --handler local-dynamodb-stream::LocalDynamoDbStream.Function::Handler \
     --role local-role
 
 aws --endpoint-url=http://localhost:4574 lambda invoke --function-name local-function local-function.log
