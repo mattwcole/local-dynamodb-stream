@@ -8,8 +8,10 @@ services:
       - "8080:8080"
     environment:
       - "SERVICES=dynamodb,dynamodbstreams,lambda"
-      - "LAMBDA_EXECUTOR=docker"
+      - "LAMBDA_EXECUTOR=docker-reuse"
       - "DOCKER_HOST=unix:///var/run/docker.sock"
     volumes:
       - "./tmp/localstack:/tmp/localstack"
       - "/var/run/docker.sock:/var/run/docker.sock"
+      - "./provision.sh:/docker-entrypoint-initaws.d/provision.sh"
+      - "./function.zip:/tmp/function.zip"
