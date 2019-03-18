@@ -12,7 +12,7 @@ aws --endpoint-url=http://localhost:4574 lambda create-function \
     --function-name local-function \
     --runtime dotnetcore2.1 \
     --zip-file fileb:///tmp/function.zip \
-    --handler local-dynamodb-stream::LocalDynamoDbStream.Function::FunctionHandler \
+    --handler LocalDynamoDbStream::LocalDynamoDbStream.Function::FunctionHandler \
     --role local-role
 
 echo "Done creating Lambda function"
