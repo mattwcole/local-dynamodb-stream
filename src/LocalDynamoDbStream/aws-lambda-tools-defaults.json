@@ -15,5 +15,5 @@
   "function-runtime": "dotnetcore2.1",
   "function-memory-size": 256,
   "function-timeout": 30,
-  "function-handler": "local-dynamodb-stream::local_dynamodb_stream.Function::FunctionHandler"
+  "function-handler": "LocalDynamoDbStream::LocalDynamoDbStream.Function::FunctionHandler"
 }

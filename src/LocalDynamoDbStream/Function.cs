@@ -1,11 +1,12 @@
 using System;
 using System.IO;
+using System.Threading.Tasks;
 using Amazon.DynamoDBv2.Model;
 using Amazon.Lambda.Core;
 using Amazon.Lambda.DynamoDBEvents;
 using Newtonsoft.Json;
 
-[assembly: LambdaSerializer(typeof(JsonSerializer))]
+[assembly: LambdaSerializer(typeof(Amazon.Lambda.Serialization.Json.JsonSerializer))]
 
 namespace LocalDynamoDbStream
 {
@@ -13,7 +14,7 @@ namespace LocalDynamoDbStream
     {
         private static readonly JsonSerializer JsonSerializer = new JsonSerializer();
 
-        public void FunctionHandler(DynamoDBEvent dynamoEvent, ILambdaContext context)
+        public Task FunctionHandler(DynamoDBEvent dynamoEvent, ILambdaContext context)
         {
             context.Logger.LogLine($"Beginning to process {dynamoEvent.Records.Count} records...");
 
@@ -28,11 +29,8 @@ namespace LocalDynamoDbStream
             }
 
             context.Logger.LogLine("Stream processing complete.");
-        }
 
-        public void Handler()
-        {
-            Console.WriteLine("HELLO FROM LAMBDA");
+            return Task.CompletedTask;
         }
 
         private static string SerializeStreamRecord(StreamRecord streamRecord)

@@ -4,10 +4,10 @@ services:
   localstack:
     image: localstack/localstack
     ports:
-      - "4567-4584:4567-4584"
+      - "4567-4586:4567-4586"
       - "8080:8080"
     environment:
-      - "SERVICES=dynamodb,dynamodbstreams,lambda"
+      - "SERVICES=dynamodb,dynamodbstreams,lambda,cloudwatch,logs"
       - "LAMBDA_EXECUTOR=docker-reuse"
       - "DOCKER_HOST=unix:///var/run/docker.sock"
     volumes:

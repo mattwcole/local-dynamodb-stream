@@ -36,9 +36,16 @@ aws --endpoint-url=http://localhost:4569 dynamodb put-item \
     --item Id={S="key1"},Value={S="value1"}
 ```
 
+### Get the CloudWatch Logs for the Lamda Invocation
+
+```sh
+aws --endpoint-url=http://localhost:4586 logs filter-log-events \
+    --log-group-name /aws/lambda/local-function
+```
+
 ### Update the Lambda Code
 
-If you have made changes to the Lambda and want to update the existing version, first use the commands above to re-publish and zip.
+If you have made changes to the Lambda and want to update the existing version, first use the commands above to re-publish and zip, then replace the function using the following.
 
 ```sh
 aws --endpoint-url=http://localhost:4574 lambda update-function-code \
