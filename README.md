@@ -1,5 +1,7 @@
 # LocalStack DynamoDB Stream to Lambda
 
+An example .NET Core Lambda consuming a DynamoDB Stream. Runs in [LocalStack](https://github.com/localstack/localstack) on Docker.
+
 ## Usage
 
 Requires .NET Core 2.1, Docker, Docker Compose, the aws cli (or awslocal) and [7Zip](https://www.7-zip.org/download.html) on the path if using Windows.
@@ -37,6 +39,8 @@ aws --endpoint-url=http://localhost:4569 dynamodb put-item \
 ```
 
 ### Get the CloudWatch Logs for the Lamda Invocation
+
+_Note that CloudWatch Logs do not appear to be working from Windows hosts (see [here](https://github.com/localstack/localstack/issues/1211))._
 
 ```sh
 aws --endpoint-url=http://localhost:4586 logs filter-log-events \
